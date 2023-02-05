@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -55,3 +56,19 @@ def corr_map(dataframe: pd.DataFrame, method="pearson", title=None) -> None:
     plt.yticks(rotation=0, size=12)
     plt.title(f"{method.title()} Correlation Map" if title == None else title, size=14)
     plt.show()
+
+def plot_importances(model, features):
+    sns.set(rc={"axes.facecolor": "gainsboro", "figure.facecolor": "gainsboro"})
+    importances = model.feature_importances_
+    indices = np.argsort(importances)
+    indices = indices[-50:]
+    plt.figure(figsize=(20, 10))
+    plt.title("Feature Importances", size=10)
+    plt.barh(
+        range(len(indices)), importances[indices], color="royalblue", align="center"
+    )
+    plt.yticks(range(len(indices)), [features[i] for i in indices])
+    plt.xlabel("Relative Importance", size=10)
+    plt.show()
+    matplotlib.rc_file_defaults()
+    sns.reset_orig()
