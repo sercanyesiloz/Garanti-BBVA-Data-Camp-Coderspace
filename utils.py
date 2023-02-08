@@ -72,3 +72,31 @@ def plot_importances(model, features):
     plt.show()
     matplotlib.rc_file_defaults()
     sns.reset_orig()
+
+
+def check_missing(dataframe: pd.DataFrame) -> pd.DataFrame:
+
+    return pd.DataFrame(
+        {
+            "feature": dataframe.columns,
+            "n_missing": [dataframe[i].isnull().sum() for i in dataframe.columns],
+            "missing_rate": [dataframe[i].isnull().sum() / dataframe.shape[0] for i in dataframe.columns],
+        }
+    ).reset_index(drop=True).sort_values("n_missing", ascending=False)
+
+
+def plot_missing(dataframe, title=None):
+    sns.set(rc={"axes.facecolor": "gainsboro", "figure.facecolor": "gainsboro"})
+    plt.figure(figsize=(12, 6))
+    sns.barplot(
+        data=check_missing(dataframe),
+        x="missing_rate",
+        y="feature",
+        palette='Oranges',
+    )
+    plt.title("Missing Values" if title == None else title, size=12)
+    plt.ylabel("Features", size=10)
+    plt.xlabel("Missing Rate", size=10)
+    plt.show()
+    matplotlib.rc_file_defaults()
+    sns.reset_orig()
