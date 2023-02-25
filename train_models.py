@@ -12,6 +12,7 @@ def get_model_scores(model, splitter, train_set, test_set, target: str, n_folds:
 
     X_test = test_set.drop(columns=[target], axis=1).copy()
     y_oof = np.zeros(X.shape[0])
+    y_oof_score = np.zeros((X.shape[0], 2))
     y_pred = np.zeros(X_test.shape[0])
     y_score = np.zeros((X_test.shape[0], 2))
 
@@ -25,6 +26,7 @@ def get_model_scores(model, splitter, train_set, test_set, target: str, n_folds:
         print(f'train: {X_train.shape}')
         print(f'val: {X_val.shape}')
 
+        #Training Classifier
         model.fit(
             X_train,
             y_train,
@@ -32,13 +34,19 @@ def get_model_scores(model, splitter, train_set, test_set, target: str, n_folds:
             early_stopping_rounds=500,
             verbose=250,
         )
-        
+
+        #Feature Importances        
         if plot_imp:
             plot_importances(model, features)
 
+        #Validation Predictions
         val_pred = model.predict(X_val)
         y_oof[val_ind] += val_pred
 
+        val_score = model.predict_proba(X_val)
+        y_oof_score[val_ind] += val_score
+
+        #Test Predictions
         test_pred = model.predict(X_test)
         y_pred += test_pred / n_folds
 
@@ -53,4 +61,4 @@ def get_model_scores(model, splitter, train_set, test_set, target: str, n_folds:
     print(f'accuracy: {accuracy_score(y, y_oof)}')
     print(f'folds avg accuracy: {np.mean(scores)}')
     
-    return deepcopy(y_score)
+    return y_score, y_oof_score

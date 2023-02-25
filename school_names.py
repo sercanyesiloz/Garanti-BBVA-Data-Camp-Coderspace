@@ -324,6 +324,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Bahçeşehir Üniversitesi Silicon Valley Campus', 'school_name'] = 'Bahcesehir University'
     df_.loc[df_['school_name'] == 'Bahçeşehir Üniversitesi Wissen Akademi', 'school_name'] = 'Bahcesehir University'
     df_.loc[df_['school_name'] == 'Bahcesehir Üniversitesi', 'school_name'] = 'Bahcesehir University'
+
     df_.loc[df_['school_name'] == 'Dokuz Eylül Üniversitesi', 'school_name'] = 'Dokuz Eylul University'
     df_.loc[df_['school_name'] == 'Dokuz Eylül University', 'school_name'] = 'Dokuz Eylul University'
     df_.loc[df_['school_name'] == 'Dokuz Eylül Üniversitesi Sosyal Bilimler Enstitüsü', 'school_name'] = 'Dokuz Eylul University'
@@ -367,6 +368,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Dokuz Eylül Üniversitesi - İzmir Meslek Yüksekokulu', 'school_name'] = 'Dokuz Eylul University'
     df_.loc[df_['school_name'] == 'Dokuz Eylül University, Graduate School of Natural and Applied Sciences', 'school_name'] = 'Dokuz Eylul University'
     df_.loc[df_['school_name'] == 'Dokuz Eylül Üniversitesi Sürekli Eğitim MErkezi', 'school_name'] = 'Dokuz Eylul University'
+
     df_.loc[df_['school_name'] == 'Selçuk Üniversitesi', 'school_name'] = 'Selcuk University'
     df_.loc[df_['school_name'] == 'Selçuk Üniversitesi Ereğli Meslek Yüksekokulu', 'school_name'] = 'Selcuk University'
     df_.loc[df_['school_name'] == 'Konya Selçuk Üniversitesi', 'school_name'] = 'Selcuk University'
@@ -393,6 +395,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Konya selcuk universitesi eregli meslek yuksek okulu', 'school_name'] = 'Selcuk University'
     df_.loc[df_['school_name'] == 'konya selcuk universitesi', 'school_name'] = 'Selcuk University'
     df_.loc[df_['school_name'] == 'selcuk university', 'school_name'] = 'Selcuk University'
+
     df_.loc[df_['school_name'] == 'Beykent University ', 'school_name'] = 'Beykent University'
     df_.loc[df_['school_name'] == 'T.C. Beykent University', 'school_name'] = 'Beykent University'
     df_.loc[df_['school_name'] == 'Postgraduate\tBeykent University', 'school_name'] = 'Beykent University'
@@ -405,6 +408,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Beykent Üniversitesi Yazılım Mühendisliği', 'school_name'] = 'Beykent University'
     df_.loc[df_['school_name'] == 'İstanbul Beykent Üniversitesi', 'school_name'] = 'Beykent University'
     df_.loc[df_['school_name'] == 'Beykent üniversity', 'school_name'] = 'Beykent University'
+
     df_.loc[df_['school_name'] == 'Ankara Üniversitesi', 'school_name'] = 'Ankara University'
     df_.loc[df_['school_name'] == 'Ankara Üniversitesi Fen Fakültesi', 'school_name'] = 'Ankara University'
     df_.loc[df_['school_name'] == 'Ankara Üniversitesi (Tömer) - 세종학당', 'school_name'] = 'Ankara University'
@@ -438,6 +442,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Ankara University,  TÖMER', 'school_name'] = 'Ankara University'
     df_.loc[df_['school_name'] == 'ankara university faculty of electronic engineer', 'school_name'] = 'Ankara University'
     df_.loc[df_['school_name'] == 'ankara üniversitesi kastamonu m.y.o', 'school_name'] = 'Ankara University'
+
     df_.loc[df_['school_name'] == 'Trakya Üniversitesi', 'school_name'] = 'Trakya University'
     df_.loc[df_['school_name'] == 'Trakya Üniversitesi Teknik Bilimler MYO', 'school_name'] = 'Trakya University'
     df_.loc[df_['school_name'] == 'T.C. Trakya Üniversitesi Keşan Yusuf Çapraz Uygulamalı Bilimler Yüksekokulu', 'school_name'] = 'Trakya University'
@@ -455,6 +460,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Trakya University, Faculty of Engineering and Architecture', 'school_name'] = 'Trakya University'
     df_.loc[df_['school_name'] == 'Trakya University - Faculty of Engineering', 'school_name'] = 'Trakya University'
     df_.loc[df_['school_name'] == 'Kirklareli / Trakya Universitesi', 'school_name'] = 'Trakya University'
+
     df_.loc[df_['school_name'] == 'Suleyman Demirel Universty', 'school_name'] = 'Suleyman Demirel University'
     df_.loc[df_['school_name'] == 'Suleyman Demirel Univercity', 'school_name'] = 'Suleyman Demirel University'
     df_.loc[df_['school_name'] == 'Suleyman Demirel Universirty', 'school_name'] = 'Suleyman Demirel University'
@@ -463,6 +469,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Süleyman Demirel Üniversitesi Fenbilimleri Enstitüsü', 'school_name'] = 'Suleyman Demirel University'
     df_.loc[df_['school_name'] == 'Isparta Süleyman Demirel Üniversitesi', 'school_name'] = 'Suleyman Demirel University'
     df_.loc[df_['school_name'] == 'Süleyman Demirel Üniversitesi | Bilgisayar ve Kontrol Öğretmeni', 'school_name'] = 'Suleyman Demirel University'
+
     df_.loc[df_['school_name'] == 'Eskişehir Osmangazi Üniversitesi', 'school_name'] = 'Osmangazi University'
     df_.loc[df_['school_name'] == 'Eskişehir Osmangazi University', 'school_name'] = 'Osmangazi University'
     df_.loc[df_['school_name'] == 'Eskişehir Osmangazi Üniversitesi - Metallurgical Engineering', 'school_name'] = 'Osmangazi University'
@@ -475,6 +482,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Eskisehir Osmangazi Universitesi', 'school_name'] = 'Osmangazi University'
     df_.loc[df_['school_name'] == 'Osmangazi Universitesi', 'school_name'] = 'Osmangazi University'
     df_.loc[df_['school_name'] == 'Osmangazi Üniversitesi', 'school_name'] = 'Osmangazi University'
+
     df_.loc[df_['school_name'] == 'Karadeniz Teknik Üniversitesi', 'school_name'] = 'Karadeniz Technical University'
     df_.loc[df_['school_name'] == 'Karadeniz Technical Universty', 'school_name'] = 'Karadeniz Technical University'
     df_.loc[df_['school_name'] == 'Karadeniz Teknik Universitesi', 'school_name'] = 'Karadeniz Technical University'
@@ -484,10 +492,12 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Karadeniz Teknik Üniversitesi,Bilgisayar Mühendisliği Bölümü', 'school_name'] = 'Karadeniz Technical University'
     df_.loc[df_['school_name'] == 'Karadeniz Teknik Üniversitesi / Karadeniz Technical University', 'school_name'] = 'Karadeniz Technical University'
     df_.loc[df_['school_name'] == ' Karadeniz Technical University', 'school_name'] = 'Karadeniz Technical University'
+
     df_.loc[df_['school_name'] == 'Boğaziçi Üniversitesi', 'school_name'] = 'Bogazici University'
     df_.loc[df_['school_name'] == 'Boğaziçi Üniversitesi / Bogazici University', 'school_name'] = 'Bogazici University'
     df_.loc[df_['school_name'] == 'Boğaziçi Üniversitesi / Bosphorus University', 'school_name'] = 'Bogazici University'
     df_.loc[df_['school_name'] == 'Boğaziçi Üniversitesi-Kalder', 'school_name'] = 'Bogazici University'
+
     df_.loc[df_['school_name'] == 'Limak Enerji & Boğaziçi Üniversitesi ', 'school_name'] = 'Bogazici University'
     df_.loc[df_['school_name'] == 'Boğaziçi Üniversitesi Yaşam Boyu Eğitim Merkezi', 'school_name'] = 'Bogazici University'
     df_.loc[df_['school_name'] == 'Boğaziçi Üniversitesi BÜEM', 'school_name'] = 'Bogazici University'
@@ -495,6 +505,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Bogazici University Department of Economics', 'school_name'] = 'Bogazici University'
     df_.loc[df_['school_name'] == 'Bogazici University Lifelong Learning Center', 'school_name'] = 'Bogazici University'
     df_.loc[df_['school_name'] == 'Üniversite\t\tBogaziçi Üniversitesi - Istanbul', 'school_name'] = 'Bogazici University'
+
     df_.loc[df_['school_name'] == 'Fırat Üniversitesi', 'school_name'] = 'Firat University'
     df_.loc[df_['school_name'] == 'Elazığ Fırat Üniversitesi ', 'school_name'] = 'Firat University'
     df_.loc[df_['school_name'] == 'Fırat Üniversitesi ', 'school_name'] = 'Firat University'
@@ -507,6 +518,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Fırat University  Elazığ, Turkey', 'school_name'] = 'Firat University'
     df_.loc[df_['school_name'] == 'Firat Universty', 'school_name'] = 'Firat University'
     df_.loc[df_['school_name'] == 'Firat Universitesi', 'school_name'] = 'Firat University'
+
     df_.loc[df_['school_name'] == 'Bilkent Üniversitesi / Bilkent University', 'school_name'] = 'Bilkent University'
     df_.loc[df_['school_name'] == 'Bilkent University, Ankara, Industrial Engineering', 'school_name'] = 'Bilkent University'
     df_.loc[df_['school_name'] == 'Bilkent University Faculty of Business Administration', 'school_name'] = 'Bilkent University'
@@ -516,6 +528,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Bilkent Üniversitesi', 'school_name'] = 'Bilkent University'
     df_.loc[df_['school_name'] == 'İhsan Doğramacı Bilkent Üniversitesi', 'school_name'] = 'Bilkent University'
     df_.loc[df_['school_name'] == 'Bilkent university', 'school_name'] = 'Bilkent University'
+
     df_.loc[df_['school_name'] == 'Erciyes Üniversitesi', 'school_name'] = 'Erciyes University'
     df_.loc[df_['school_name'] == 'Erciyes Üniversitesi ', 'school_name'] = 'Erciyes University'
     df_.loc[df_['school_name'] == 'Erciyes Üniversitesi Yabancı Diller Yüksekokulu (İngilizce)', 'school_name'] = 'Erciyes University'
@@ -524,6 +537,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Erciyes', 'school_name'] = 'Erciyes University'
     df_.loc[df_['school_name'] == 'Erciyes Unıversity', 'school_name'] = 'Erciyes University'
     df_.loc[df_['school_name'] == 'University of Erciyes', 'school_name'] = 'Erciyes University'
+
     df_.loc[df_['school_name'] == 'Çukurova Üniversitesi myo', 'school_name'] = 'Cukurova University'
     df_.loc[df_['school_name'] == 'Çukurova Üniversty', 'school_name'] = 'Cukurova University'
     df_.loc[df_['school_name'] == 'Çukurova Üniversitesi Adana myo', 'school_name'] = 'Cukurova University'
@@ -532,6 +546,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Cukurova Universitesi', 'school_name'] = 'Cukurova University'
     df_.loc[df_['school_name'] == 'Cukurova Universty', 'school_name'] = 'Cukurova University'
     df_.loc[df_['school_name'] == 'Çukurova Üniversitesi', 'school_name'] = 'Cukurova University'
+
     df_.loc[df_['school_name'] == 'TOBB Ekonomi ve Teknoloji Üniversitesi', 'school_name'] = 'TOBB University of Economics and Technology'
     df_.loc[df_['school_name'] == 'TOBB Ekonomi ve Teknoloji Universitesi', 'school_name'] = 'TOBB University of Economics and Technology'
     df_.loc[df_['school_name'] == 'TOBB University of Economics &Technology', 'school_name'] = 'TOBB University of Economics and Technology'
@@ -544,6 +559,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'TOBB ETU University of Economics and Technology', 'school_name'] = 'TOBB University of Economics and Technology'
     df_.loc[df_['school_name'] == 'TOBB Economics and Technolgy University', 'school_name'] = 'TOBB University of Economics and Technology'
     df_.loc[df_['school_name'] == 'TOBB ETU', 'school_name'] = 'TOBB University of Economics and Technology'
+
     df_.loc[df_['school_name'] == 'Gebze Teknik Üniversitesi', 'school_name'] = 'Gebze Technical University'
     df_.loc[df_['school_name'] == 'Gebze Technical Universityy', 'school_name'] = 'Gebze Technical University'
     df_.loc[df_['school_name'] == 'Gebze Tecnical University', 'school_name'] = 'Gebze Technical University'
@@ -553,6 +569,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Gebze Institute Of Technology', 'school_name'] = 'Gebze Institute of Technology'
     df_.loc[df_['school_name'] == 'Gebze yuksek teknoloji enstitusu', 'school_name'] = 'Gebze Institute of Technology'
     df_.loc[df_['school_name'] == 'Gebze Yüksek Teknoloji Enstitüsü', 'school_name'] = 'Gebze Institute of Technology'
+
     df_.loc[df_['school_name'] == 'Istanbul Bilgi Üniversitesi', 'school_name'] = 'Istanbul Bilgi University'
     df_.loc[df_['school_name'] == 'Istanbul Bilgi', 'school_name'] = 'Istanbul Bilgi University'
     df_.loc[df_['school_name'] == 'İstanbul Bilgi Üniversitesi', 'school_name'] = 'Istanbul Bilgi University'
@@ -560,6 +577,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'İstanbul Bilgi Üniversitesi - Laureate International Universities', 'school_name'] = 'Istanbul Bilgi University'
     df_.loc[df_['school_name'] == 'İstanbul Bilgi Üniversity', 'school_name'] = 'Istanbul Bilgi University'
     df_.loc[df_['school_name'] == 'İstanbul Bilgi Üniversitesi, Tasarim Kulturu ve Yonetimi', 'school_name'] = 'Istanbul Bilgi University'
+
     df_.loc[df_['school_name'] == 'Yeditepe Üniversitesi', 'school_name'] = 'Yeditepe University'
     df_.loc[df_['school_name'] == 'Yeditepe Üniversitesi / Yeditepe University', 'school_name'] = 'Yeditepe University'
     df_.loc[df_['school_name'] == 'Yeditepe university', 'school_name'] = 'Yeditepe University'
@@ -570,6 +588,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Yeditepe Univercity', 'school_name'] = 'Yeditepe University'
     df_.loc[df_['school_name'] == '2005\tYeditepe University', 'school_name'] = 'Yeditepe University'
     df_.loc[df_['school_name'] == 'Yeditepe Üniversitesi Mimarlık Fakültesi ', 'school_name'] = 'Yeditepe University'
+
     df_.loc[df_['school_name'] == 'Orta Doğu Teknik Üniversitesi / Middle East Technical University', 'school_name'] = 'Middle East Technical University'
     df_.loc[df_['school_name'] == 'Orta Doğu Teknik Üniversitesi', 'school_name'] = 'Middle East Technical University'
     df_.loc[df_['school_name'] == 'Orta Dogu Teknik Üniversitesi', 'school_name'] = 'Middle East Technical University'
@@ -587,6 +606,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == ' Middle East Technical University', 'school_name'] = 'Middle East Technical University'
     df_.loc[df_['school_name'] == 'METU', 'school_name'] = 'Middle East Technical University'
     df_.loc[df_['school_name'] == 'ODTÜ (METU)', 'school_name'] = 'Middle East Technical University'
+
     df_.loc[df_['school_name'] == 'Akdeniz Üniversitesi', 'school_name'] = 'Mediterranean University'
     df_.loc[df_['school_name'] == 'Doğu Akdeniz Üniversitesi', 'school_name'] = 'Eastern Mediterranean University'
     df_.loc[df_['school_name'] == 'Doğu Akdeniz Üniversitesi / Eastern Mediterranean University', 'school_name'] = 'Eastern Mediterranean University'
@@ -598,6 +618,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'University 1\t\tAkdeniz University  - Akseki Vocational Schools /Antalya', 'school_name'] = 'Mediterranean University'
     df_.loc[df_['school_name'] == 'Akdeniz University Computer Engineering ', 'school_name'] = 'Mediterranean University'
     df_.loc[df_['school_name'] == 'Akdeniz Universtity', 'school_name'] = 'Mediterranean University'
+
     df_.loc[df_['school_name'] == 'Mugla Sıtkı Kocman University', 'school_name'] = 'Mugla Sitki Kocman University'
     df_.loc[df_['school_name'] == 'Muğla Sıtkı Koçman Üniversitesi', 'school_name'] = 'Mugla Sitki Kocman University'
     df_.loc[df_['school_name'] == 'Muğla Sıtkı Koçman University', 'school_name'] = 'Mugla Sitki Kocman University'
@@ -606,6 +627,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'School of Foreign Languages-Muğla Sıtkı Koçman University', 'school_name'] = 'Mugla Sitki Kocman University'
     df_.loc[df_['school_name'] == 'Muğla Sıtkı Koçman University School of Foreign Languages', 'school_name'] = 'Mugla Sitki Kocman University'
     df_.loc[df_['school_name'] == 'Muğla Science High School', 'school_name'] = 'Mugla Sitki Kocman University'
+
     df_.loc[df_['school_name'] == 'Koç University', 'school_name'] = 'Koc University'
     df_.loc[df_['school_name'] == 'Koç University, College of Engineering, Istanbul', 'school_name'] = 'Koc University'
     df_.loc[df_['school_name'] == '2003-2008 Fall \t\tKoç University', 'school_name'] = 'Koc University'
@@ -615,6 +637,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Koç Univeristy', 'school_name'] = 'Koc University'
     df_.loc[df_['school_name'] == 'Koç Üniversitesi', 'school_name'] = 'Koc University'
     df_.loc[df_['school_name'] == 'Koç Üni', 'school_name'] = 'Koc University'
+
     df_.loc[df_['school_name'] == 'Sabancı University', 'school_name'] = 'Sabanci University'
     df_.loc[df_['school_name'] == 'Sabancı Universitesi', 'school_name'] = 'Sabanci University'
     df_.loc[df_['school_name'] == 'Sabancı Univeristy', 'school_name'] = 'Sabanci University'
@@ -624,8 +647,10 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Sabanci University, Istanbul', 'school_name'] = 'Sabanci University'
     df_.loc[df_['school_name'] == '2005 - 2010           Sabanci University, Istanbul', 'school_name'] = 'Sabanci University'
     df_.loc[df_['school_name'] == 'Sabanci University Summer School', 'school_name'] = 'Sabanci University'
+
     df_.loc[df_['school_name'] == 'Galatasaray Üniversitesi', 'school_name'] = 'Galatasaray University'
     df_.loc[df_['school_name'] == 'GalaGalatasaray Üniversitesi', 'school_name'] = 'Galatasaray University'
+
     df_.loc[df_['school_name'] == 'Ahmet Yesevi Üniversitesi', 'school_name'] = 'Ahmet Yesevi University'
     df_.loc[df_['school_name'] == 'Hoca Ahmet Yesevi Üniversitesi', 'school_name'] = 'Ahmet Yesevi University'
     df_.loc[df_['school_name'] == 'H. Ahmet Yesevi Üniversitesi', 'school_name'] = 'Ahmet Yesevi University'
@@ -639,6 +664,7 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Hoca Ahmet Yesevi University', 'school_name'] = 'Ahmet Yesevi University'
     df_.loc[df_['school_name'] == 'Ahmet Yesevi Universty', 'school_name'] = 'Ahmet Yesevi University'
     df_.loc[df_['school_name'] == 'Hoca Ahmet Yesevi Universty', 'school_name'] = 'Ahmet Yesevi University'
+
     df_.loc[df_['school_name'] == 'Atatürk Üniversitesi', 'school_name'] = 'Ataturk University'
     df_.loc[df_['school_name'] == 'Atatürk Üniversitesi Resmi', 'school_name'] = 'Ataturk University'
     df_.loc[df_['school_name'] == 'Erzurum Atatürk Üniversitesi', 'school_name'] = 'Ataturk University'
@@ -647,10 +673,12 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Ataturk University ( İkinci Universite )', 'school_name'] = 'Ataturk University'
     df_.loc[df_['school_name'] == 'Uluslararasi Ataturk Universitesi', 'school_name'] = 'Ataturk University'
     df_.loc[df_['school_name'] == 'Ataturk Universitesi', 'school_name'] = 'Ataturk University'
+
     df_.loc[df_['school_name'] == 'Eskişehir Teknik Üniversitesi', 'school_name'] = 'Eskisehir Technical University'
     df_.loc[df_['school_name'] == 'Eskişehir Technical University', 'school_name'] = 'Eskisehir Technical University'
     df_.loc[df_['school_name'] == 'Eskişehir Teknik Üniversitesi ', 'school_name'] = 'Eskisehir Technical University'
     df_.loc[df_['school_name'] == 'Eskişehir Teknik University', 'school_name'] = 'Eskisehir Technical University'
+
     df_.loc[df_['school_name'] == 'Baskent Üniversitesi', 'school_name'] = 'Baskent University'
     df_.loc[df_['school_name'] == 'Başkent Üniversitesi', 'school_name'] = 'Baskent University'
     df_.loc[df_['school_name'] == 'Başkent University', 'school_name'] = 'Baskent University'
@@ -658,35 +686,47 @@ def fix_school_names(dataframe: pd.DataFrame) -> pd.DataFrame:
     df_.loc[df_['school_name'] == 'Başkent Üniversitesi Özel Ayşeabla Okulları Fen Lisesi', 'school_name'] = 'Baskent University Özel Ayşeabla Okulları Fen Lisesi'
     df_.loc[df_['school_name'] == 'Başkent Üniversitesi Kolej Ayşeabla', 'school_name'] = 'Baskent University'
     df_.loc[df_['school_name'] == 'Başkent ', 'school_name'] = 'Baskent University'
+
     df_.loc[df_['school_name'] == 'Uludağ Üniversitesi', 'school_name'] = 'Uludag University'
     df_.loc[df_['school_name'] == 'Uludağ University', 'school_name'] = 'Uludag University'
     df_.loc[df_['school_name'] == 'Uludağ Üniversitesi Bilgisayar Programcılığı', 'school_name'] = 'Uludag University'
     df_.loc[df_['school_name'] == 'Uludağ Üniversitesi Teknik Bilimler Meslek Yüksek Okulu', 'school_name'] = 'Uludag University'
     df_.loc[df_['school_name'] == 'Uludag Universitesi (Lisans)', 'school_name'] = 'Uludag University'
+
     df_.loc[df_['school_name'] == 'Atılım Üniversitesi', 'school_name'] = 'Atilim University'
+
     df_.loc[df_['school_name'] == 'Celal Bayar Üniversitesi', 'school_name'] = 'Celal Bayar University'
     df_.loc[df_['school_name'] == 'Celal Bayar Üniversitesi Kırkağaç Meslek Yüksekokulu ', 'school_name'] = 'Celal Bayar University'
     df_.loc[df_['school_name'] == 'Manisa Celal Bayar University', 'school_name'] = 'Celal Bayar University'
+
     df_.loc[df_['school_name'] == 'Pamukkale Üniversitesi', 'school_name'] = 'Pamukkale University'
+
     df_.loc[df_['school_name'] == 'İstanbul Commerce Univercity', 'school_name'] = 'Istanbul Commerce University'
     df_.loc[df_['school_name'] == 'İstanbul Ticaret Üniversitesi', 'school_name'] = 'Istanbul Commerce University'
+
     df_.loc[df_['school_name'] == 'Çankaya Üniversitesi', 'school_name'] = 'Cankaya University'
     df_.loc[df_['school_name'] == 'Çankaya University', 'school_name'] = 'Cankaya University'
+
     df_.loc[df_['school_name'] == 'Maltepe Üniversitesi', 'school_name'] = 'Maltepe University'
     df_.loc[df_['school_name'] == 'Maltepe Üniversitesi Yazılım Mühendisliği', 'school_name'] = 'Maltepe University'
+    
     df_.loc[df_['school_name'] == 'T.C. Maltepe Üniversitesi', 'school_name'] = 'Maltepe University'
+
     df_.loc[df_['school_name'] == 'Ondokuz Mayıs Üniversitesi', 'school_name'] = 'Ondokuz Mayis University'
     df_.loc[df_['school_name'] == 'Samsun Ondokuz Mayıs Anadolu Lisesi', 'school_name'] = 'Ondokuz Mayis University'
     df_.loc[df_['school_name'] == 'Ondokuz Mayıs Üniversitesi', 'school_name'] = 'Ondokuz Mayis University'
     df_.loc[df_['school_name'] == 'Ondokuz Mayıs University', 'school_name'] = 'Ondokuz Mayis University'
     df_.loc[df_['school_name'] == 'Samsun Ondokuz Mayıs Anadolu Lisesi', 'school_name'] = 'Ondokuz Mayis University'
     df_.loc[df_['school_name'] == 'Samsun Ondokuz Mayis University', 'school_name'] = 'Ondokuz Mayis University'
+
     df_.loc[df_['school_name'] == 'Kirikkale Üniversitesi', 'school_name'] = 'Kirikkale University'
     df_.loc[df_['school_name'] == 'Kırıkkale Üniversitesi', 'school_name'] = 'Kirikkale University'
     df_.loc[df_['school_name'] == 'Kırıkkale University', 'school_name'] = 'Kirikkale University'
+
     df_.loc[df_['school_name'] == 'Istanbul Kültür University', 'school_name'] = 'Istanbul Kultur University'
     df_.loc[df_['school_name'] == 'Istanbul Kültür Üniversitesi', 'school_name'] = 'Istanbul Kultur University'
     df_.loc[df_['school_name'] == 'İstanbul Kültür Üniversitesi', 'school_name'] = 'Istanbul Kultur University'
+
     df_.loc[df_['school_name'] == 'İzmir Ekonomi Üniversitesi', 'school_name'] = 'Izmir University of Economics'
     df_.loc[df_['school_name'] == 'Izmir Ekonomi Universitesi', 'school_name'] = 'Izmir University of Economics'
     df_.loc[df_['school_name'] == 'İzmir University of Economics', 'school_name'] = 'Izmir University of Economics'
