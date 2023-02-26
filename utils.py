@@ -85,7 +85,7 @@ def check_missing(dataframe: pd.DataFrame) -> pd.DataFrame:
         {
             "feature": dataframe.columns,
             "n_missing": [dataframe[i].isnull().sum() for i in dataframe.columns],
-            "missing_rate": [dataframe[i].isnull().sum() / dataframe.shape[0] for i in dataframe.columns],
+            "missing_ratio": [dataframe[i].isnull().sum() / dataframe.shape[0] for i in dataframe.columns],
         }
     ).reset_index(drop=True).sort_values("n_missing", ascending=False)
 
