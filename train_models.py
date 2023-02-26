@@ -1,6 +1,5 @@
 import gc
 import numpy as np
-from copy import deepcopy
 from sklearn.metrics import accuracy_score
 from utils import plot_importances
 
@@ -60,5 +59,6 @@ def get_model_scores(model, splitter, train_set, test_set, target: str, n_folds:
 
     print(f'accuracy: {accuracy_score(y, y_oof)}')
     print(f'folds avg accuracy: {np.mean(scores)}')
+    print(f'folds std accuracy: {np.std(scores)}')
     
     return y_score, y_oof_score

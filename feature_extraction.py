@@ -199,15 +199,25 @@ def load_work_experiences(path: str) -> pd.DataFrame:
         df_["start_year_month"].apply(lambda x: "-".join([str(x)[:4], str(x)[4:]]))
     )
     df_ = df_.drop(columns=["start_year_month"], axis=1)
-    df_.loc[df_['location'].astype(str).str.contains('Kahraman Maras'), 'location'] = 'Kahramanmaras, Turkey'
-    df_.loc[df_['location'].astype(str).str.contains('Şanliurfa'), 'location'] = 'Sanliurfa, Turkey'
-    df_.loc[df_['location'].astype(str).str.contains('İçel'), 'location'] = 'Mersin, Turkey'
-    df_.loc[df_['location'].astype(str).str.contains('Afyon'), 'location'] = 'Afyonkarahisar, Turkey'
-    df_['location'] = df_['location'].apply(lambda x: str(x).replace('Türkiye', 'Turkey'))
-    df_['location'] = df_['location'].apply(lambda x: x.upper().strip())
-    df_['location'] = df_['location'].apply(lambda x: translation(str(x)))
+    df_.loc[
+        df_["location"].astype(str).str.contains("Kahraman Maras"), "location"
+    ] = "Kahramanmaras, Turkey"
+    df_.loc[
+        df_["location"].astype(str).str.contains("Şanliurfa"), "location"
+    ] = "Sanliurfa, Turkey"
+    df_.loc[
+        df_["location"].astype(str).str.contains("İçel"), "location"
+    ] = "Mersin, Turkey"
+    df_.loc[
+        df_["location"].astype(str).str.contains("Afyon"), "location"
+    ] = "Afyonkarahisar, Turkey"
+    df_["location"] = df_["location"].apply(
+        lambda x: str(x).replace("Türkiye", "Turkey")
+    )
+    df_["location"] = df_["location"].apply(lambda x: x.upper().strip())
+    df_["location"] = df_["location"].apply(lambda x: translation(str(x)))
     for city in tr_cities:
-        df_['location'] = df_['location'].apply(lambda x: city if city in x else x)
+        df_["location"] = df_["location"].apply(lambda x: city if city in x else x)
 
     df_ = (
         df_.loc[df_["start_date"].dt.year != 2019]
@@ -242,11 +252,11 @@ def load_work_experiences(path: str) -> pd.DataFrame:
             employee_med_days_to_quit=("days_to_quit", "median"),
             employee_last_experience_month=("start_date", lambda x: x.max().month),
             employee_last_experience_year=("start_date", lambda x: x.max().year),
-            #employee_first_experience_month=("start_date", lambda x: x.min().month),
+            # employee_first_experience_month=("start_date", lambda x: x.min().month),
             employee_first_experience_year=("start_date", lambda x: x.min().year),
             employee_nunique_company=("company_id", "nunique"),
-            #employee_nunique_location = ('location', 'nunique'),
-            #employee_last_location=('location', 'last'),
+            # employee_nunique_location = ('location', 'nunique'),
+            # employee_last_location=('location', 'last'),
             company_id=("company_id", "last"),
         )
         .assign(
@@ -261,32 +271,52 @@ def load_work_experiences(path: str) -> pd.DataFrame:
         )
     )
 
-    emp_df = emp_df.merge(df_[['user_id']].drop_duplicates().merge(
-                    df_.loc[df_['start_date'].dt.year == 2018].groupby(by = 'user_id', as_index=False).agg(company_count_2018 = ('company_id', 'count'))
-                    , on = ['user_id'], how = 'left'
-                    ).fillna({'company_count_2018': 0}), on = ['user_id'], how = 'left')
-#
-    emp_df = emp_df.merge(df_[['user_id']].drop_duplicates().merge(
-                    df_.loc[df_['start_date'].dt.year == 2017].groupby(by = 'user_id', as_index=False).agg(company_count_2017 = ('company_id', 'count'))
-                    , on = ['user_id'], how = 'left'
-                    ).fillna({'company_count_2017': 0}), on = ['user_id'], how = 'left')
+    emp_df = emp_df.merge(
+        df_[["user_id"]]
+        .drop_duplicates()
+        .merge(
+            df_.loc[df_["start_date"].dt.year == 2018]
+            .groupby(by="user_id", as_index=False)
+            .agg(company_count_2018=("company_id", "count")),
+            on=["user_id"],
+            how="left",
+        )
+        .fillna({"company_count_2018": 0}),
+        on=["user_id"],
+        how="left",
+    )
+    
+    emp_df = emp_df.merge(
+        df_[["user_id"]]
+        .drop_duplicates()
+        .merge(
+            df_.loc[df_["start_date"].dt.year == 2017]
+            .groupby(by="user_id", as_index=False)
+            .agg(company_count_2017=("company_id", "count")),
+            on=["user_id"],
+            how="left",
+        )
+        .fillna({"company_count_2017": 0}),
+        on=["user_id"],
+        how="left",
+    )
 
     comp_df = df_.groupby(by="company_id", as_index=False).agg(
         company_avg_days_to_quit=("days_to_quit", "mean"),
         company_std_days_to_quit=("days_to_quit", "std"),
         company_max_days_to_quit=("days_to_quit", "max"),
-        #company_min_days_to_quit=("days_to_quit", "min"),
+        # company_min_days_to_quit=("days_to_quit", "min"),
         company_med_days_to_quit=("days_to_quit", "median"),
         company_skew_days_to_quit=("days_to_quit", "skew"),
         company_nunique_employees=("user_id", "nunique"),
-        #company_nunique_location = ('location', 'nunique'),
+        # company_nunique_location = ('location', 'nunique'),
         company_lifetime=(
-           "start_date",
-           lambda x: int(str(pd.to_datetime("2019-01-01") - x.min()).split()[0]),
+            "start_date",
+            lambda x: int(str(pd.to_datetime("2019-01-01") - x.min()).split()[0]),
         ),
         company_last_hire=(
-           "start_date",
-           lambda x: int(str(pd.to_datetime("2019-01-01") - x.max()).split()[0]),
+            "start_date",
+            lambda x: int(str(pd.to_datetime("2019-01-01") - x.max()).split()[0]),
         ),
     )
 
@@ -295,7 +325,8 @@ def load_work_experiences(path: str) -> pd.DataFrame:
         - x.employee_avg_days_to_quit,
         avg_days_to_quit_ratio=lambda x: x.company_avg_days_to_quit
         / x.employee_avg_days_to_quit,
-        company_hire_ratio = lambda x: x.company_lifetime / x.company_nunique_employees
+        company_hire_ratio=lambda x: x.company_lifetime / x.company_nunique_employees,
     )
+
 
         
