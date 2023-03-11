@@ -1,9 +1,7 @@
 import gc
 import numpy as np
-from sklearn.metrics import confusion_matrix
-from utils import plot_confusion_matrix
-from sklearn.metrics import accuracy_score
-from utils import plot_importances
+from sklearn.metrics import confusion_matrix, accuracy_score
+from utils import plot_importances, plot_confusion_matrix
 
 def get_model_scores(model, splitter, train_set, test_set, target: str, n_folds: int, plot_imp: bool = False):
 

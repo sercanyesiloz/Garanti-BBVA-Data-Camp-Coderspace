@@ -1,6 +1,6 @@
 import re
-from utils import *
 import warnings
+from utils import *
 import pandas as pd
 from tqdm import tqdm
 from sklearn.feature_extraction.text import CountVectorizer
