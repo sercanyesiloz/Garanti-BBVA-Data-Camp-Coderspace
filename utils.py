@@ -1,4 +1,5 @@
 import re
+import itertools
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -9,15 +10,36 @@ from sklearn.preprocessing import LabelEncoder, OrdinalEncoder
 def my_tokenizer(text):
     return re.split("\\s+",text)
 
-
 def translation(x):
     return x.translate(x.maketrans("ÜüÖöİıĞğŞşÇç", "UuOoIiGgSsCc"))
 
+def plot_confusion_matrix(cm,
+                          classes,
+                          title,
+                          save:bool=False):
+
+    plt.imshow(cm, interpolation='nearest', cmap='Greens')
+    plt.title(title, size = 12)
+    plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=45)
+    plt.yticks(tick_marks, classes)
+    thresh = cm.max() / 2.
+    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+        plt.text(j, i, format(cm[i, j], '.0f'),
+                 horizontalalignment="center",
+                 color="white" if cm[i, j] > thresh else "black")
+    plt.tight_layout()
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+    plt.grid(False)
+    if save:
+        plt.savefig(f'plots/{title}.jpg')
+    plt.show()
 
 def load_tr_cities() -> list:
 
     return ['ISTANBUL', 'BALIKESIR', 'BURSA', 'TEKIRDAG', 'CANAKKALE', 'YALOVA', 'KOCAELI', 'KIRKLARELI', 'EDIRNE', 'BILECIK', 'SAKARYA', 'IZMIR', 'MANISA', 'AYDIN', 'DENIZLI', 'USAK', 'AFYONKARAHISAR', 'KUTAHYA', 'MUGLA', 'ANTALYA', 'ADANA', 'MERSIN', 'HATAY', 'BURDUR', 'OSMANIYE', 'KAHRAMANMARAS', 'ISPARTA', 'ANKARA', 'KONYA', 'KAYSERI', 'ESKISEHIR', 'SIVAS', 'KIRIKKALE', 'AKSARAY', 'KARAMAN', 'KIRSEHIR', 'NIGDE', 'NEVSEHIR', 'YOZGAT', 'CANKIRI', 'AMASYA', 'ARTVIN', 'BARTIN', 'BAYBURT', 'BOLU', 'CORUM', 'DUZCE', 'GUMUSHANE', 'GIRESUN', 'KARABUK', 'KASTAMONU', 'ORDU', 'RIZE', 'SAMSUN', 'SINOP', 'TOKAT', 'TRABZON', 'ZONGULDAK', 'AGRI', 'ARDAHAN', 'BITLIS', 'BINGOL', 'ELAZIG', 'ERZINCAN', 'ERZURUM', 'HAKKARI', 'IGDIR', 'KARS', 'MALATYA', 'MUS', 'TUNCELI', 'VAN', 'GAZIANTEP', 'DIYARBAKIR', 'SANLIURFA', 'BATMAN', 'ADIYAMAN', 'SIIRT', 'MARDIN', 'KILIS', 'SIRNAK']
-
 
 def desc_stats(dataframe: pd.DataFrame, title=None) -> None:
 
@@ -95,7 +117,7 @@ def plot_missing(dataframe: pd.DataFrame, title=None):
     plt.figure(figsize=(12, 6))
     sns.barplot(
         data=check_missing(dataframe),
-        x="missing_rate",
+        x="missing_ratio",
         y="feature",
         palette='Oranges',
     )

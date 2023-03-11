@@ -1,5 +1,7 @@
 import gc
 import numpy as np
+from sklearn.metrics import confusion_matrix
+from utils import plot_confusion_matrix
 from sklearn.metrics import accuracy_score
 from utils import plot_importances
 
@@ -57,7 +59,10 @@ def get_model_scores(model, splitter, train_set, test_set, target: str, n_folds:
         del X_train, y_train, X_val, y_val
         gc.collect()
 
+    print('-'*80)
     print(f'accuracy: {accuracy_score(y, y_oof)}')
+    cm = confusion_matrix(y, y_oof)
+    plot_confusion_matrix(cm, classes=[0,1], title=f'{model.__class__.__name__} Confusion Matrix', save=True)
     print(f'folds avg accuracy: {np.mean(scores)}')
     print(f'folds std accuracy: {np.std(scores)}')
     
